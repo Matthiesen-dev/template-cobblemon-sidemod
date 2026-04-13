@@ -5,7 +5,9 @@ import dev.matthiesen.common.template_cobblemon_sidemod.commands.CommandRegistry
 import dev.matthiesen.common.template_cobblemon_sidemod.config.ConfigManager;
 import dev.matthiesen.common.template_cobblemon_sidemod.config.ModConfig;
 import dev.matthiesen.common.template_cobblemon_sidemod.permissions.ModPermissions;
+import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
 import net.minecraft.server.MinecraftServer;
 
 public class CommonModExample {
@@ -29,8 +31,8 @@ public class CommonModExample {
         new ConfigManager().saveConfig();
     }
 
-    public static void registerCommands(CommandDispatcher<CommandSourceStack> dispatcher) {
+    public static void registerCommands(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext registry, Commands.CommandSelection context) {
         Constants.createInfoLog("Registering Commands");
-        CommandRegistry.init(dispatcher);
+        CommandRegistry.init(dispatcher, registry, context);
     }
 }

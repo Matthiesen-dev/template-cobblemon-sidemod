@@ -13,14 +13,7 @@ public class FabricModExample implements ModInitializer {
     public void onInitialize() {
         Constants.createInfoLog("Loading for Fabric Mod Loader");
         CommonModExample.initialize();
-        CommandRegistrationCallback.EVENT.register(
-                (
-                        dispatcher,
-                        registryAccess,
-                        environment
-                ) ->
-                        CommonModExample.registerCommands(dispatcher)
-        );
+        CommandRegistrationCallback.EVENT.register(CommonModExample::registerCommands);
         ServerLifecycleEvents.SERVER_STARTING.register(server -> {
             MinecraftServer runningServer = server.createCommandSourceStack().getServer();
             CommonModExample.onStartup(runningServer);

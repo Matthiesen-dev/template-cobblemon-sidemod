@@ -28,7 +28,7 @@ public class ForgeModExample {
 
     @SubscribeEvent
     public void onCommandRegistration(RegisterCommandsEvent event) {
-        CommonModExample.registerCommands(event.getDispatcher());
+        CommonModExample.registerCommands(event.getDispatcher(), event.getBuildContext(), event.getCommandSelection());
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)

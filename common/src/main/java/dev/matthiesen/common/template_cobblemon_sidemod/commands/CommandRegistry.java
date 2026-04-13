@@ -2,7 +2,9 @@ package dev.matthiesen.common.template_cobblemon_sidemod.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import dev.matthiesen.common.template_cobblemon_sidemod.interfaces.ICommand;
+import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
 
 import java.util.List;
 
@@ -11,9 +13,9 @@ public class CommandRegistry {
             new Example()
     );
 
-    public static void init(CommandDispatcher<CommandSourceStack> dispatcher) {
+    public static void init(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext registry, Commands.CommandSelection context) {
         for (ICommand command : COMMANDS) {
-            command.register(dispatcher);
+            command.register(dispatcher, registry, context);
         }
     }
 }
