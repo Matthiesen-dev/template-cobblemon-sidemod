@@ -4,6 +4,7 @@ import dev.matthiesen.common.template_cobblemon_sidemod.CommonModExample;
 import dev.matthiesen.common.template_cobblemon_sidemod.Constants;
 import net.minecraft.server.MinecraftServer;
 import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
@@ -13,7 +14,7 @@ import net.neoforged.neoforge.event.server.ServerStoppingEvent;
 
 @Mod(Constants.MOD_ID)
 public class ForgeModExample {
-    public ForgeModExample() {
+    public ForgeModExample(IEventBus modBus) {
         Constants.createInfoLog("Loading for NeoForge Mod Loader");
         CommonModExample.initialize();
         NeoForge.EVENT_BUS.register(this);
