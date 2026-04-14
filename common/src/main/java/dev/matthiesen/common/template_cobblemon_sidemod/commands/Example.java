@@ -29,10 +29,16 @@ public class Example implements ICommand {
     }
 
     private int normal(CommandContext<CommandSourceStack> ctx) {
-        if (ctx.getSource().getPlayer() != null) {
-            ServerPlayer player = ctx.getSource().getPlayer();
+        ServerPlayer player = ctx.getSource().getPlayer();
+
+        if (player != null) {
             player.displayClientMessage(Component.literal("Hey!"), false);
+
+            if (ModPermissions.checkPlayerPermission(player, CommonModExample.permissions.EXAMPLE_COOL_PERMISSION)) {
+                player.displayClientMessage(Component.literal("Your even cooler!"), false);
+            }
         }
+
         return 1;
     }
 }
