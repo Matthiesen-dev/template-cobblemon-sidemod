@@ -1,4 +1,3 @@
-import org.gradle.kotlin.dsl.assign
 import org.gradle.kotlin.dsl.invoke
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -21,6 +20,8 @@ allprojects {
     repositories {
         mavenCentral()
         maven("https://artefacts.cobblemon.com/releases/")
+        maven("https://repo.spongepowered.org/repository/maven-public")
+        maven("https://api.modrinth.com/maven")
     }
 
     tasks {

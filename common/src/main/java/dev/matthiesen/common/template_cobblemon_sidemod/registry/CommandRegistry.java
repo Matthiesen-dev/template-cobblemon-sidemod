@@ -1,6 +1,7 @@
-package dev.matthiesen.common.template_cobblemon_sidemod.commands;
+package dev.matthiesen.common.template_cobblemon_sidemod.registry;
 
 import com.mojang.brigadier.CommandDispatcher;
+import dev.matthiesen.common.template_cobblemon_sidemod.commands.Example;
 import dev.matthiesen.common.template_cobblemon_sidemod.interfaces.ICommand;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;

@@ -24,10 +24,7 @@ dependencies {
     minecraft("com.mojang:minecraft:${property("minecraft_version")}")
     mappings(loom.officialMojangMappings())
     modImplementation("net.fabricmc:fabric-loader:${property("fabric_loader_version")}")
-
-    modRuntimeOnly("net.fabricmc.fabric-api:fabric-api:${property("fabric_api_version")}")
-    modImplementation(fabricApi.module("fabric-command-api-v2", property("fabric_api_version").toString()))
-    modImplementation(fabricApi.module("fabric-lifecycle-events-v1", property("fabric_api_version").toString()))
+    modImplementation("net.fabricmc.fabric-api:fabric-api:${property("fabric_api_version")}")
 
     //needed for cobblemon
     modImplementation("net.fabricmc:fabric-language-kotlin:${property("fabric_kotlin")}")
@@ -49,11 +46,14 @@ tasks {
     processResources {
         inputs.property("mod_id", project.property("mod_id").toString())
         inputs.property("version", project.version)
+        inputs.property("mod_name", project.property("mod_name").toString())
+        inputs.property("mod_description", project.property("mod_description").toString())
+        inputs.property("mod_license", project.property("mod_license").toString())
+        inputs.property("mod_author", project.property("mod_author").toString())
 
         filesMatching("fabric.mod.json") {
             expand(project.properties)
         }
-
     }
 
     jar {

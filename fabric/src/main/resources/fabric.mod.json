@@ -2,17 +2,27 @@
   "schemaVersion": 1,
   "id": "${mod_id}",
   "version": "${version}",
-  "name": "Cobblemon Multi-platform Fabric MDK",
-  "description": "A MDK useful for Fabric Development",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
   "authors": [
-    "The Cobblemon Team"
+    "${mod_author}"
   ],
-  "license": "MIT License",
-  "icon": "assets/example/icon.png",
+  "license": "${mod_license}",
+  "icon": "icon.png",
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.github_releases": "${github_url}"
+      }
+    }
+  },
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.matthiesen.fabric.template_cobblemon_sidemod.FabricModExample"
+      "dev.matthiesen.fabric.template_cobblemon_sidemod.ExampleModFabric"
+    ],
+    "client": [
+      "dev.matthiesen.fabric.template_cobblemon_sidemod.ExampleModFabricClient"
     ]
   },
   "depends": {

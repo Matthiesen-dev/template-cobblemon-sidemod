@@ -9,11 +9,13 @@ architectury {
 
 loom {
     silentMojangMappingsLicense()
+    accessWidenerPath.set(project(":common").file("src/main/resources/example-mod-common.accesswidener"))
 }
 
 dependencies {
     minecraft("com.mojang:minecraft:${property("minecraft_version")}")
     mappings(loom.officialMojangMappings())
+    compileOnly("org.spongepowered:mixin:0.8.5")
     modImplementation("com.cobblemon:mod:${property("cobblemon_version")}") { isTransitive = false }
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${property("junit_version")}")
@@ -23,6 +25,14 @@ dependencies {
 tasks {
     test {
         useJUnitPlatform()
+    }
+
+    processResources {
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
+        inputs.property("mod_name", project.property("mod_name").toString())
+        filesMatching("pack.mcmeta") {
+            expand(project.properties)
+        }
     }
 
     remapSourcesJar {

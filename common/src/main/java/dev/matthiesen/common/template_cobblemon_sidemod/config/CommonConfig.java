@@ -1,11 +1,9 @@
 package dev.matthiesen.common.template_cobblemon_sidemod.config;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
 import dev.matthiesen.common.template_cobblemon_sidemod.Constants;
 
-public class ModConfig {
+public class CommonConfig extends ConfigBase {
     @SerializedName("permissionlevels")
     public PermissionLevels permissionLevels = new PermissionLevels();
 
@@ -18,9 +16,4 @@ public class ModConfig {
         public int COMMAND_EXAMPLE_COOL_PERMISSION_LEVEL =
                 Constants.PERMISSION_LEVELS.CHEAT_COMMANDS_AND_COMMAND_BLOCKS.getLevel();
     }
-
-    public static final Gson GSON = new GsonBuilder()
-            .disableHtmlEscaping()
-            .setPrettyPrinting()
-            .create();
 }

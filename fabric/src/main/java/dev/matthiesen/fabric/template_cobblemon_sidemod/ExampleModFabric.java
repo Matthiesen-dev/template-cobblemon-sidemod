@@ -1,24 +1,27 @@
 package dev.matthiesen.fabric.template_cobblemon_sidemod;
 
-import dev.matthiesen.common.template_cobblemon_sidemod.CommonModExample;
+import dev.matthiesen.common.template_cobblemon_sidemod.ExampleModCommon;
 import dev.matthiesen.common.template_cobblemon_sidemod.Constants;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.server.MinecraftServer;
 
-public class FabricModExample implements ModInitializer {
+public class ExampleModFabric implements ModInitializer {
+    public static MinecraftServer MC_SERVER;
 
     @Override
     public void onInitialize() {
         Constants.createInfoLog("Loading for Fabric Mod Loader");
-        CommonModExample.initialize();
-        CommandRegistrationCallback.EVENT.register(CommonModExample::registerCommands);
+        ExampleModCommon.initialize();
+        CommandRegistrationCallback.EVENT.register(ExampleModCommon::registerCommands);
         ServerLifecycleEvents.SERVER_STARTING.register(server -> {
-            MinecraftServer runningServer = server.createCommandSourceStack().getServer();
-            CommonModExample.onStartup(runningServer);
+            MC_SERVER = server;
+            ExampleModCommon.onStartup();
         });
-        ServerLifecycleEvents.SERVER_STOPPING.register(server -> CommonModExample.onShutdown());
+        ServerLifecycleEvents.SERVER_STOPPING.register(server -> {
+            MC_SERVER = null;
+            ExampleModCommon.onShutdown();
+        });
     }
-
 }

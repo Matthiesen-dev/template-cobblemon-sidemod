@@ -2,7 +2,7 @@ package dev.matthiesen.common.template_cobblemon_sidemod.permissions;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.permission.PermissionLevel;
-import dev.matthiesen.common.template_cobblemon_sidemod.CommonModExample;
+import dev.matthiesen.common.template_cobblemon_sidemod.ExampleModCommon;
 import dev.matthiesen.common.template_cobblemon_sidemod.Constants;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.server.level.ServerPlayer;
@@ -14,11 +14,11 @@ public class ModPermissions {
     public ModPermissions() {
         this.EXAMPLE_PERMISSION = new ModPermission(
                 Constants.MOD_ID + ".command.example",
-                toPermLevel(CommonModExample.config.permissionLevels.COMMAND_EXAMPLE_PERMISSION_LEVEL)
+                toPermLevel(ExampleModCommon.config.permissionLevels.COMMAND_EXAMPLE_PERMISSION_LEVEL)
         );
         this.EXAMPLE_COOL_PERMISSION = new ModPermission(
                 Constants.MOD_ID + ".command.example-cool",
-                toPermLevel(CommonModExample.config.permissionLevels.COMMAND_EXAMPLE_COOL_PERMISSION_LEVEL)
+                toPermLevel(ExampleModCommon.config.permissionLevels.COMMAND_EXAMPLE_COOL_PERMISSION_LEVEL)
         );
     }
 
