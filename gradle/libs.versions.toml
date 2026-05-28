@@ -13,6 +13,7 @@ cobblemon = "1.7.3+1.21.1"
 junit = "5.1.0"
 publish = "0.35.0"
 matthiesen_lib = "1.2.5"
+sponge-mixin = "0.8.5"
 
 [plugins]
 shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
@@ -43,8 +44,10 @@ matthiesen-lib-neoforge = { group = "dev.matthiesen", name = "matthiesen-lib-neo
 matthiesen-lib-api-common = { group = "dev.matthiesen", name = "matthiesen-lib-api-common", version.ref = "matthiesen_lib" }
 matthiesen-lib-api-fabric = { group = "dev.matthiesen", name = "matthiesen-lib-api-fabric", version.ref = "matthiesen_lib" }
 matthiesen-lib-api-neoforge = { group = "dev.matthiesen", name = "matthiesen-lib-api-neoforge", version.ref = "matthiesen_lib" }
+sponge-mixin = { group = "org.spongepowered", name = "mixin", version.ref = "sponge-mixin" }
 
 [bundles]
+commonCompileOnly = ["sponge-mixin"]
 commonImplementation = []
 commonModImplementation = ["cobblemon-common", "matthiesen-lib-api-common"]
 fabricModImplementation = ["fabric-loader", "fabric-api", "fabric-language-kotlin"]

@@ -11,8 +11,10 @@ architectury {
 dependencies {
     minecraft(libs.minecraft)
     mappings(loom.officialMojangMappings())
-    compileOnly("org.spongepowered:mixin:0.8.5")
 
+    libs.bundles.commonCompileOnly.get().forEach { dependency ->
+        compileOnly(dependency.copy())
+    }
     libs.bundles.commonModImplementation.get().forEach { dependency ->
         modImplementation(dependency.copy()) { isTransitive = false }
     }
