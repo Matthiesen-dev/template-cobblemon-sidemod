@@ -136,6 +136,11 @@ jobs:
     if: ${{ needs.prepare.outputs.is_snapshot == 'false' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
       - name: Sync Project Description on Modrinth
         uses: funnyboy-roks/modrinth-auto-desc@v1.7
         with:
@@ -177,7 +182,7 @@ jobs:
                     },
                     {
                         "name":  "Download on Modrinth",
-                        "value": "[Modrinth]("https://modrinth.com/mod/${{ secrets.MODRINTH_ID }}/")",
+                        "value": "[Modrinth](https://modrinth.com/mod/${{ secrets.MODRINTH_ID }}/)",
                         "inline": false
                     },
                     {
