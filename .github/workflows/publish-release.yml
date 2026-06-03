@@ -154,6 +154,8 @@ jobs:
     steps:
       - name: Build Discord Embed Payload
         id: build_payload
+        env:
+          RELEASE_BODY: ${{ github.event.release.body }}
         run: |
           payload=$(jq -cn \
             --arg title "New Release: ${{ env.MOD_NAME }} ${{ needs.prepare.outputs.version }}" \
@@ -164,7 +166,7 @@ jobs:
               "embeds": [
                 {
                   "title": $title,
-                  "description": $description,
+                  "description": $ENV.RELEASE_BODY,
                   "color": 5763719,
                   "thumbnail": {
                     "url": "${{ env.DISCORD_ICON_URL }}"
