@@ -10,7 +10,7 @@ architectury {
     fabric()
 }
 
-val shadowCommon: Configuration by configurations.creating
+val shadowBundle: Configuration by configurations.creating
 
 dependencies {
     minecraft(libs.minecraft)
@@ -24,7 +24,7 @@ dependencies {
 
     implementation(project(":common", configuration = "namedElements"))
     "developmentFabric"(project(":common", configuration = "namedElements"))
-    shadowCommon(project(":common", configuration = "transformProductionFabric"))
+    shadowBundle(project(":common", configuration = "transformProductionFabric"))
 
     testImplementation(libs.junit.api)
     testRuntimeOnly(libs.junit.engine)
@@ -38,6 +38,6 @@ tasks {
     }
 
     shadowJar {
-        configurations = listOf(shadowCommon)
+        configurations = listOf(shadowBundle)
     }
 }
