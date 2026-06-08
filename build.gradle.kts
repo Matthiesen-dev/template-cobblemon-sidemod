@@ -11,6 +11,8 @@ tasks.register<Copy>("copyJars") {
     from("./common/build/libs/") {
         include("*.jar")
         exclude("*-dev-shadow.jar")
+        exclude("*-transformProductionFabric.jar")
+        exclude("*-transformProductionNeoForge.jar")
     }
     from("./fabric/build/libs/") {
         include("*.jar")
