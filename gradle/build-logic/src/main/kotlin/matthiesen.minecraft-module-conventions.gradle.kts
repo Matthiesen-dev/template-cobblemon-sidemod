@@ -13,6 +13,11 @@ pluginManager.withPlugin("dev.architectury.loom") {
         silentMojangMappingsLicense()
     }
 
+    tasks.named<RemapJarTask>("remapJar") {
+        archiveBaseName.set("${rootProject.property("archives_base_name")}-${project.name}")
+        archiveVersion.set(project.version.toString())
+    }
+
     tasks.named<RemapSourcesJarTask>("remapSourcesJar") {
         archiveBaseName.set("${rootProject.property("archives_base_name")}-${project.name}")
         archiveVersion.set(project.version.toString())
