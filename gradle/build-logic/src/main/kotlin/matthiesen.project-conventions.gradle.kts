@@ -54,6 +54,12 @@ repositories {
             excludeGroup("dev.matthiesen")
         }
     }
+    maven("https://api.modrinth.com/maven") {
+        name = "Modrinth"
+        content {
+            includeGroup("maven.modrinth")
+        }
+    }
 }
 
 dependencies {
