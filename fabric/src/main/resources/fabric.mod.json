@@ -19,14 +19,15 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.matthiesen.fabric.template_cobblemon_sidemod.ExampleModFabric"
+      "dev.matthiesen.template_cobblemon_sidemod.fabric.ExampleModFabric"
     ],
     "client": [
-      "dev.matthiesen.fabric.template_cobblemon_sidemod.ExampleModFabricClient"
+      "dev.matthiesen.template_cobblemon_sidemod.fabric.ExampleModFabricClient"
     ]
   },
   "depends": {
     "minecraft": "1.21.1",
-    "cobblemon": ">=1.7.3 <1.8.0"
+    "cobblemon": ">=1.7.3 <1.8.0",
+    "matthiesen_lib_api": ">=1.9.1 <2.0.0"
   }
 }

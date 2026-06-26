@@ -33,3 +33,10 @@ mandatory = true
 versionRange = "[1.7.3,)"
 ordering = "AFTER"
 side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "matthiesen_lib_api"
+mandatory = true
+versionRange = "[1.9.1,)"
+ordering = "AFTER"
+side = "SERVER"

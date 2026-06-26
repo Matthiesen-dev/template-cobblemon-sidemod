@@ -1,6 +1,6 @@
-package dev.matthiesen.fabric.template_cobblemon_sidemod;
+package dev.matthiesen.template_cobblemon_sidemod.fabric;
 
-import dev.matthiesen.common.template_cobblemon_sidemod.ExampleModCommonClient;
+import dev.matthiesen.template_cobblemon_sidemod.common.ExampleModCommonClient;
 import net.fabricmc.api.ClientModInitializer;
 
 public class ExampleModFabricClient implements ClientModInitializer {
