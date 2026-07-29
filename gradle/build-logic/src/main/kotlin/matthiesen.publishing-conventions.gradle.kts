@@ -24,7 +24,6 @@ configure<PublishingExtension> {
 }
 
 configure<MavenPublishBaseExtension> {
-    signAllPublications()
     coordinates(
         project.group.toString(),
         "${rootProject.property("archives_base_name")}-${project.name}",

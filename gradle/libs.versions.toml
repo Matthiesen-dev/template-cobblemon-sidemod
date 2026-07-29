@@ -12,7 +12,7 @@ kotlin-for-forge = "5.10.0"
 cobblemon = "1.7.3+1.21.1"
 junit = "5.1.0"
 publish = "0.35.0"
-matthiesen_lib = "1.12.0"
+matthiesen_core = "1.0.0-beta.14"
 sponge-mixin = "0.8.5"
 
 [plugins]
@@ -38,18 +38,15 @@ cobblemon-fabric = { group = "com.cobblemon", name = "fabric", version.ref = "co
 cobblemon-neoforge = { group = "com.cobblemon", name = "neoforge", version.ref = "cobblemon" }
 junit-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit" }
 junit-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit" }
-matthiesen-lib-common = { group = "dev.matthiesen", name = "matthiesen-lib-common", version.ref = "matthiesen_lib" }
-matthiesen-lib-fabric = { group = "dev.matthiesen", name = "matthiesen-lib-fabric", version.ref = "matthiesen_lib" }
-matthiesen-lib-neoforge = { group = "dev.matthiesen", name = "matthiesen-lib-neoforge", version.ref = "matthiesen_lib" }
-matthiesen-lib-api-common = { group = "dev.matthiesen", name = "matthiesen-lib-api-common", version.ref = "matthiesen_lib" }
-matthiesen-lib-api-fabric = { group = "dev.matthiesen", name = "matthiesen-lib-api-fabric", version.ref = "matthiesen_lib" }
-matthiesen-lib-api-neoforge = { group = "dev.matthiesen", name = "matthiesen-lib-api-neoforge", version.ref = "matthiesen_lib" }
+matthiesen-core-common = { group = "dev.matthiesen", name = "matthiesen-core-common", version.ref = "matthiesen_core" }
+matthiesen-core-fabric = { group = "dev.matthiesen", name = "matthiesen-core-fabric", version.ref = "matthiesen_core" }
+matthiesen-core-neoforge = { group = "dev.matthiesen", name = "matthiesen-core-neoforge", version.ref = "matthiesen_core" }
 sponge-mixin = { group = "org.spongepowered", name = "mixin", version.ref = "sponge-mixin" }
 
 [bundles]
 commonCompileOnly = ["sponge-mixin"]
 commonImplementation = []
-commonModImplementation = ["cobblemon-common", "matthiesen-lib-api-common"]
+commonModImplementation = ["cobblemon-common", "matthiesen-core-common"]
 fabricModImplementation = ["fabric-loader", "fabric-api", "fabric-language-kotlin"]
-fabricModImplementationNoTransitive = ["cobblemon-fabric", "matthiesen-lib-api-fabric"]
-neoforgeModImplementation = ["cobblemon-neoforge", "matthiesen-lib-api-neoforge"]
+fabricModImplementationNoTransitive = ["cobblemon-fabric", "matthiesen-core-fabric"]
+neoforgeModImplementation = ["cobblemon-neoforge", "matthiesen-core-neoforge"]

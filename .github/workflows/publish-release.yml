@@ -10,8 +10,7 @@ on:
 
 # The dependencies below correspond to:
 # - Cobblemon (MdwFAVRL)
-# - Matthiesen Lib API (j2JrSWnx)
-# - Matthiesen Lib (cPmFkPpB)
+# - Matthiesen Core (sqEZOmQo)
 
 jobs:
   publish:
@@ -30,7 +29,7 @@ jobs:
       modrinth_dependencies: |-
         [
           {"project_id":"MdwFAVRL","dependency_type":"required"},
-          {"project_id":"j2JrSWnx","dependency_type":"required"}
+          {"project_id":"sqEZOmQo","dependency_type":"required"}
         ]
       discord_icon_url: "https://raw.githubusercontent.com/Matthiesen-dev/.github/refs/heads/main/logo-transparent.png"
     secrets:
