@@ -34,9 +34,6 @@ repositories {
     maven("https://maven.matthiesen.dev/snapshots") {
         name = "devMatthiesenMavenSnapshots"
     }
-    maven("https://raw.githubusercontent.com/Fuzss/modresources/main/maven/") {
-        name = "Fuzs Mod Resources"
-    }
     // for development builds
     maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
         name = "sonatype-oss-snapshots1"
