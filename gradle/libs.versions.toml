@@ -12,8 +12,9 @@ kotlin-for-forge = "5.10.0"
 cobblemon = "1.7.3+1.21.1"
 junit = "5.1.0"
 publish = "0.35.0"
-matthiesen_core = "1.0.0-beta.14"
+matthiesen_core = "1.0.0-beta.34"
 sponge-mixin = "0.8.5"
+forge-config-api-port = "21.1.6"
 
 [plugins]
 shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
@@ -42,11 +43,26 @@ matthiesen-core-common = { group = "dev.matthiesen", name = "matthiesen-core-com
 matthiesen-core-fabric = { group = "dev.matthiesen", name = "matthiesen-core-fabric", version.ref = "matthiesen_core" }
 matthiesen-core-neoforge = { group = "dev.matthiesen", name = "matthiesen-core-neoforge", version.ref = "matthiesen_core" }
 sponge-mixin = { group = "org.spongepowered", name = "mixin", version.ref = "sponge-mixin" }
+forge-config-api-port-common = { group = "fuzs.forgeconfigapiport", name = "forgeconfigapiport-common-neoforgeapi", version.ref = "forge-config-api-port" }
+forge-config-api-port-fabric = { group = "fuzs.forgeconfigapiport", name = "forgeconfigapiport-fabric", version.ref = "forge-config-api-port" }
 
 [bundles]
-commonCompileOnly = ["sponge-mixin"]
+commonCompileOnly = ["sponge-mixin", "forge-config-api-port-common"]
 commonImplementation = []
-commonModImplementation = ["cobblemon-common", "matthiesen-core-common"]
+commonModCompileOnly = []
+commonModImplementation = []
+commonModImplementationNoTransitive = ["cobblemon-common", "matthiesen-core-common"]
+
+fabricCompileOnly = []
+fabricImplementation = []
+fabricModCompileOnly = []
+fabricModRuntimeOnly = ["forge-config-api-port-fabric"]
 fabricModImplementation = ["fabric-loader", "fabric-api", "fabric-language-kotlin"]
 fabricModImplementationNoTransitive = ["cobblemon-fabric", "matthiesen-core-fabric"]
-neoforgeModImplementation = ["cobblemon-neoforge", "matthiesen-core-neoforge"]
+
+neoforgeCompileOnly = []
+neoforgeImplementation = []
+neoforgeModCompileOnly = []
+neoforgeModRuntimeOnly = []
+neoforgeModImplementation = []
+neoforgeModImplementationNoTransitive = ["cobblemon-neoforge", "matthiesen-core-neoforge"]

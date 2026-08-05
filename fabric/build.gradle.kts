@@ -15,12 +15,13 @@ val shadowBundle: Configuration by configurations.creating
 dependencies {
     minecraft(libs.minecraft)
     mappings(loom.officialMojangMappings())
-    libs.bundles.fabricModImplementation.get().forEach { dependency ->
-        modImplementation(dependency.copy())
-    }
-    libs.bundles.fabricModImplementationNoTransitive.get().forEach { dependency ->
-        modImplementation(dependency.copy()) { isTransitive = false }
-    }
+
+    compileOnly(libs.bundles.fabricCompileOnly)
+    implementation(libs.bundles.fabricImplementation)
+    modCompileOnly(libs.bundles.fabricModCompileOnly)
+    modRuntimeOnly(libs.bundles.fabricModRuntimeOnly)
+    modImplementation(libs.bundles.fabricModImplementation)
+    modImplementation(libs.bundles.fabricModImplementationNoTransitive) { isTransitive = false }
 
     implementation(project(":common", configuration = "namedElements"))
     "developmentFabric"(project(":common", configuration = "namedElements"))
