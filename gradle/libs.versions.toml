@@ -12,7 +12,7 @@ kotlin-for-forge = "5.10.0"
 cobblemon = "1.7.3+1.21.1"
 junit = "5.1.0"
 publish = "0.35.0"
-matthiesen_core = "1.0.0-beta.34"
+matthiesen_core = "1.2.6"
 sponge-mixin = "0.8.5"
 forge-config-api-port = "21.1.6"
 

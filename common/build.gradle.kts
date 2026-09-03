@@ -9,15 +9,18 @@ architectury {
 }
 
 dependencies {
+    // Minecraft and mappings
     minecraft(libs.minecraft)
     mappings(loom.officialMojangMappings())
 
+    // Main dependencies
     compileOnly(libs.bundles.commonCompileOnly)
     implementation(libs.bundles.commonImplementation)
     modCompileOnly(libs.bundles.commonModCompileOnly)
     modImplementation(libs.bundles.commonModImplementation)
     modImplementation(libs.bundles.commonModImplementationNoTransitive) { isTransitive = false }
 
+    // Test dependencies
     testImplementation(libs.junit.api)
     testRuntimeOnly(libs.junit.engine)
 }
