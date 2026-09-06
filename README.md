@@ -21,9 +21,9 @@ Documentation for this mod can be found at [mods.matthiesen.dev](https://mods.ma
 
 ## Version Compatibility
 
-| Minecraft Version | Cobblemon Version | Mod Version |
-|-------------------|-------------------|-------------|
-| 1.21.1            | 1.7.3             | 1.x.x       |
+| Minecraft Version | Matthiesen Core Version | Cobblemon Version | Mod Version |
+|-------------------|-------------------------|-------------------|-------------|
+| 1.21.1            | 1.x.x                   | 1.8.0             | 1.x.x       |
 
 ## FastStats Metrics
 
