@@ -8,7 +8,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod(value = TemplateCobblemonSidemodCommon.MOD_ID, dist = Dist.CLIENT)
-public class TemplateCobblemonSidemodNeoForgeClient {
+public final class TemplateCobblemonSidemodNeoForgeClient {
     public static final TemplateCobblemonSidemodCommonClient INSTANCE = TemplateCobblemonSidemodCommonClient.INSTANCE;
 
     public TemplateCobblemonSidemodNeoForgeClient(IEventBus modBus) {

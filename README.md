@@ -23,7 +23,7 @@ Documentation for this mod can be found at [mods.matthiesen.dev](https://mods.ma
 
 | Minecraft Version | Matthiesen Core Version | Cobblemon Version | Mod Version |
 |-------------------|-------------------------|-------------------|-------------|
-| 1.21.1            | 1.3.0+                  | 1.8.x+            | 1.x.x       |
+| 1.21.1            | 2.0.0+                  | 1.8.4+            | 1.x.x       |
 
 ## FastStats Metrics
 
@@ -33,7 +33,7 @@ how this mod is being used and improve it over time. You can learn more about th
 
 You can also view the data collected by this mod on the [FastStats: TODO](https://faststats.dev/project/TODO) page.
 
-To opt out of this data collection, set the `enabled` property to `false` in the `<game_directory>/config/matthiesen_core/metrics.properties` file.
+To opt out of this data collection, set the `enabled` property to `false` in the `<game_directory>/config/faststats/config.properties` file.
 
 ## License
 

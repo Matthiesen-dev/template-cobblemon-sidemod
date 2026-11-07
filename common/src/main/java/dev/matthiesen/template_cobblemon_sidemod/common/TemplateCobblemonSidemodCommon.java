@@ -1,6 +1,6 @@
 package dev.matthiesen.template_cobblemon_sidemod.common;
 
-import dev.matthiesen.libs.faststats.Token;
+import dev.faststats.Token;
 import dev.matthiesen.matthiesen_core.common.AbstractCommonMod;
 import org.jetbrains.annotations.NotNull;
 
@@ -21,10 +21,6 @@ public final class TemplateCobblemonSidemodCommon extends AbstractCommonMod {
 
     public void initialize() {
         super.initialize();
-
-       if (getCommonUtils().isModLoaded("cobblemon")) {
-            createInfoLog("Cobblemon is loaded, Hello there Cobblemon!");
-       }
 
         createInfoLog("Initialized");
     }

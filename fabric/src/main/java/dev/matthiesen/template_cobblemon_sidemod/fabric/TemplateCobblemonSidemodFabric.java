@@ -3,11 +3,12 @@ package dev.matthiesen.template_cobblemon_sidemod.fabric;
 import dev.matthiesen.template_cobblemon_sidemod.common.TemplateCobblemonSidemodCommon;
 import net.fabricmc.api.ModInitializer;
 
-public class TemplateCobblemonSidemodFabric implements ModInitializer {
+public final class TemplateCobblemonSidemodFabric implements ModInitializer {
+    public static final TemplateCobblemonSidemodCommon INSTANCE = TemplateCobblemonSidemodCommon.INSTANCE;
+
     @Override
     public void onInitialize() {
-        var instance = TemplateCobblemonSidemodCommon.INSTANCE;
-        instance.createInfoLog("Loading for Fabric Mod Loader");
-        instance.initialize();
+        INSTANCE.createInfoLog("Loading for Fabric Mod Loader");
+        INSTANCE.initialize();
     }
 }

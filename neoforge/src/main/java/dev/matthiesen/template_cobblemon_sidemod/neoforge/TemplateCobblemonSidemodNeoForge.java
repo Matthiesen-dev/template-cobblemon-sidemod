@@ -4,7 +4,7 @@ import dev.matthiesen.template_cobblemon_sidemod.common.TemplateCobblemonSidemod
 import net.neoforged.fml.common.Mod;
 
 @Mod(TemplateCobblemonSidemodCommon.MOD_ID)
-public class TemplateCobblemonSidemodNeoForge {
+public final class TemplateCobblemonSidemodNeoForge {
     public static final TemplateCobblemonSidemodCommon INSTANCE = TemplateCobblemonSidemodCommon.INSTANCE;
 
     public TemplateCobblemonSidemodNeoForge() {
